@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import za.co.novabank.core.enums.kyc.DocumentStatus;
 import za.co.novabank.core.enums.kyc.DocumentType;
-import za.co.novabank.core.model.User;
+import za.co.novabank.core.model.security.User;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

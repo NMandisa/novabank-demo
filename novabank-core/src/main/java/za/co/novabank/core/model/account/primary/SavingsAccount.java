@@ -1,21 +1,19 @@
 package za.co.novabank.core.model.account.primary;
 
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.Data;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import za.co.novabank.core.model.account.AbstractAccount;
+
 
 /**
  * @author Noxolo.Mkhungo
  */
 
-@Getter
-@Setter
+@Data
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 @Table(name = "saving_account")
 @DiscriminatorValue("saving_accounts")
 public class SavingsAccount extends AbstractAccount {
-
 }

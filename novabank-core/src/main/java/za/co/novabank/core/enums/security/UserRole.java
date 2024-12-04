@@ -1,4 +1,4 @@
-package za.co.novabank.core.enums;
+package za.co.novabank.core.enums.security;
 
 /**
  * @author Noxolo.Mkhungo

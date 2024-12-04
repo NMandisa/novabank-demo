@@ -41,5 +41,50 @@
             </list>
         </property>
     </bean>
-    
+
+    <beans profile="dev">
+        <!-- Load YAML properties -->
+        <bean id="yamlProperties" class="org.springframework.beans.factory.config.YamlPropertiesFactoryBean">
+            <property name="resources" value="classpath:env/dev/core-dev.yml"/>
+        </bean>
+        <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+            <property name="properties" ref="yamlProperties"/>
+        </bean>
+    </beans>
+    <beans profile="dev">
+        <!-- Load YAML properties -->
+        <bean id="devYamlProperties" class="org.springframework.beans.factory.config.YamlPropertiesFactoryBean">
+            <property name="resources" value="classpath:env/dev/core-dev.yml"/>
+        </bean>
+        <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+            <property name="properties" ref="devYamlProperties"/>
+        </bean>
+    </beans>
+    <beans profile="qa">
+        <!-- Load YAML properties -->
+        <bean id="qaYamlProperties" class="org.springframework.beans.factory.config.YamlPropertiesFactoryBean">
+            <property name="resources" value="classpath:env/qa/core-qa.yml"/>
+        </bean>
+        <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+            <property name="properties" ref="qaYamlProperties"/>
+        </bean>
+    </beans>
+    <beans profile="uat">
+        <!-- Load YAML properties -->
+        <bean id="uatYamlProperties" class="org.springframework.beans.factory.config.YamlPropertiesFactoryBean">
+            <property name="resources" value="classpath:env/uat/core-uat.yml"/>
+        </bean>
+        <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+            <property name="properties" ref="uatYamlProperties"/>
+        </bean>
+    </beans>
+    <beans profile="prod">
+        <!-- Load YAML properties -->
+        <bean id="prodYamlProperties" class="org.springframework.beans.factory.config.YamlPropertiesFactoryBean">
+            <property name="resources" value="classpath:env/prod/core-prod.yml"/>
+        </bean>
+        <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+            <property name="properties" ref="prodYamlProperties"/>
+        </bean>
+    </beans>
 </beans>

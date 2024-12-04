@@ -32,6 +32,8 @@ dependencies {
     implementation(group: 'org.hibernate.orm', name: 'hibernate-core', version: '6.5.2.Final')
     implementation(group: 'org.hibernate.orm', name: 'hibernate-hikaricp', version: '6.5.2.Final')
     implementation(group: 'org.hibernate.validator', name: 'hibernate-validator', version: '8.0.1.Final')
+    // Ensure HikariCP dependency is included
+    implementation 'com.zaxxer:HikariCP:5.0.1'
 
     // Jakarta Dependencies
     implementation(group: 'jakarta.transaction', name: 'jakarta.transaction-api', version: '2.0.1')
