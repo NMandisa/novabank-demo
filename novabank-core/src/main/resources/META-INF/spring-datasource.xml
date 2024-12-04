@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ~ Copyright (c) 2024 - . ~ Author : Noxolo.Mkhungo  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/data/jpa
+    https://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+
+    <jpa:repositories base-package="za.co.novabank.core.repository" entity-manager-factory-ref="entityManagerFactory" transaction-manager-ref="transactionManager"/>
+
+    <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource"  destroy-method="close" primary="true">
+        <constructor-arg ref="hikariConfig" />
+    </bean>
+
+    <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+        <property name="poolName" value="${hikari.config.poolName}" />
+        <property name="connectionTestQuery" value="${hikari.config.connectionTestQuery}" />
+        <property name="dataSourceClassName" value="${hikari.config.dataSourceClassName}" />
+        <property name="autoCommit" value="false"/>
+        <property name="maximumPoolSize" value="${hikari.config.maximumPoolSize}" />
+        <property name="minimumIdle" value="${hikari.config.minimumIdle}"/>
+        <property name="idleTimeout" value="${hikari.config.idleTimeout}"/>
+        <property name="connectionTimeout" value="${hikari.config.connection-timeout}"/>
+        <property name="transactionIsolation" value="${hikari.config.transactionIsolation}"/>
+        <property name="dataSourceProperties">
+            <props>
+                <prop key="url">${hikari.config.dataSource.url}</prop>
+                <prop key="user">${hikari.config.dataSource.user}</prop>
+                <prop key="password">${hikari.config.dataSource.password}</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="persistenceProvider" >
+            <bean class="org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider"/>
+        </property>
+        <property name="persistenceUnitName" value="novabank_persistence_unit" />
+        <property name="packagesToScan" value="za.co.novabank.core.model" />
+        <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
+        <property name="jpaProperties">
+            <props>
+                <prop key="jpa.show_sql">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager" primary="true">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+
+    <bean id="persistenceExceptionTranslationPostProcessor" class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+
+</beans>
