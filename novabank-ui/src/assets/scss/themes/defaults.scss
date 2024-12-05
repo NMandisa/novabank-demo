@@ -1,0 +1,14 @@
+// custom-bootstrap-overrides.scss
+
+// Define your variables
+$display-font-weight: 700;
+
+// Import Bootstrap SCSS
+//@import "../../../../node_modules/bootstrap/scss/bootstrap";
+
+// Override Bootstrap styles after importing
+h1, h2, h3, h4, h5, h6 {
+    & {
+        font-weight: $display-font-weight;
+    }
+}
