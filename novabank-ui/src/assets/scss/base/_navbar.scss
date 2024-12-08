@@ -1,0 +1,61 @@
+// _navbar.scss
+/* Header (Navbar) Styles */
+nav, .navbar {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .navbar-brand {
+    color: var(--text-color);
+    font-weight: 600;
+
+    &:hover {
+      color: var(--accent-color);
+    }
+
+    img {
+      max-width: 100%; // Responsive logo
+      height: auto;
+    }
+  }
+
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+
+    .nav-link {
+      color: var(--text-color);
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-left: 1rem;
+
+      &:hover, &:focus {
+        color: var(--accent-color);
+        outline: 2px solid var(--accent-color);
+        outline-offset: 4px;
+      }
+
+      @media (max-width: 768px) {
+        margin-left: 0;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .navbar-toggler {
+      border-color: var(--accent-color);
+
+      .navbar-toggler-icon {
+        background-color: var(--text-color);
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 0.2rem rgba(var(--accent-color), 0.5);
+      }
+
+      @media (max-width: 768px) {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+/* Temporary Banner Styles */
+.temp-banner {
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
+    text-align: center;
+    z-index: 500;
+  }
+  
+  .temp-banner button {
+    background-color: #155724;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .temp-banner button:hover {
+    background-color: #0d4e00;
+  }

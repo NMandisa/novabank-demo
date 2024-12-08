@@ -1,0 +1,33 @@
+/* Permanent Announcement Banner Styles */
+.announcement-banner {
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text */
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+  }
+  
+  .announcement-banner span {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  .announcement-banner button {
+    background-color: #721c24;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .announcement-banner button:hover {
+    background-color: #5a1217;
+  }

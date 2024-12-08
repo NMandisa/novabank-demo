@@ -1,0 +1,19 @@
+// app.scss
+// Bootstrap Core Styles
+//@use "node_modules/bootstrap/scss/bootstrap" as *;
+
+// Base Styles
+//@use "base/base" as *;
+@use "base/bootstrap-reset" as *;
+
+// Themes
+@use "themes/themes" as *;
+@use 'base/announcement-banner' as *;
+// Component Styles
+// @use "./components/header";
+// @use "./components/footer";
+// @use "./components/sidebar";
+// @use "./components/main-content";
+
+// Theme Switcher Mixin
+@use "mixins/theme-switcher";

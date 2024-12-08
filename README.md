@@ -2,8 +2,6 @@
 
 NovaBank is a robust, monolithic banking application designed to manage various account types, user profiles, and ensure regulatory compliance through streamlined processes and seamless integration. This pet project serves as a proof of concept, demonstrating scalable and secure banking solutions by combining system design, solution architecture, and domain expertise.
 
----
-
 ## Key Features 🌟
 
 ### Account Management 📊
@@ -47,8 +45,6 @@ NovaBank is a robust, monolithic banking application designed to manage various 
 
 - Multi-module setup using Gradle to manage different components independently and ensure future scalability.
 
----
-
 ## Use Cases 🚀
 
 1. **Financial Transaction Management 💵**
@@ -59,8 +55,6 @@ NovaBank is a robust, monolithic banking application designed to manage various 
 
 3. **Educational Purpose 📚**
     - Demonstrating end-to-end application design, ideal for research, technical learning, or proof of concept presentations.
-
----
 
 ## Technologies 🛠
 
@@ -86,12 +80,6 @@ NovaBank is a robust, monolithic banking application designed to manage various 
 ### Logging 📝
 
 - **SLF4J**: Centralized logging with Logback for flexible configuration
-
-### Frontend Options 🌍
-
-- **Angular with Gulp**: For creating dynamic, multi-frontend applications and theme management.
-
----
 
 ## License 📝
 

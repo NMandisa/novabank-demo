@@ -1,0 +1,124 @@
+// _bootstrap-reset.scss
+// Import custom files
+@use 'navbar' as *;
+@use 'features' as *;
+@use 'footer' as *;
+@use 'hero' as *;
+@use 'utilities' as *;
+@use 'cta' as *;
+@use 'mediaqueries' as *;
+@use 'palette' as *;
+@use 'temp-banner' as *;
+
+// Global Reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+html, body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 0.5rem 0;
+}
+
+p {
+  font-weight: 400;
+  margin: 0 0 1rem 0;
+}
+
+/* Anchor Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+
+  &:hover, &:focus {
+    color: var(--hover-bg-color);
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: var(--active-bg-color);
+  }
+}
+
+/* Button Styling */
+a.btn, .btn, button {
+  display: inline-block;
+  font-weight: 500;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+
+  &:hover {
+    background-color: var(--primary-hover-color);
+    border-color: var(--border-color);
+  }
+
+  &:focus, &:active {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-color), 0.5);
+  }
+}
+
+/* Card Component */
+.card {
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+  }
+
+  .card-body {
+    padding: 1.25rem;
+  }
+
+  .card-title {
+    font-weight: 600;
+  }
+
+  .card-footer {
+    border-top: 1px solid var(--border-color);
+  }
+}
+
+// Uncomment and extend Bootstrap theme colors if necessary
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    "primary": var(--primary-color),
+    "secondary": var(--secondary-color),
+    "success": var(--success-color),
+    "danger": var(--danger-color),
+    "warning": var(--warning-color),
+    "info": var(--info-color),
+    "light": var(--light-color),
+    "dark": var(--dark-color),
+    "accent": var(--accent-color)
+  )
+);

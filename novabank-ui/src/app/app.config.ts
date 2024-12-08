@@ -8,5 +8,13 @@ import {PageTitleStrategy} from "./shared/page-title-strategy/page.title.strateg
 import {provideHttpClient, withFetch} from "@angular/common/http";
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideClientHydration(), provideRouter(routes), provideAnimationsAsync(),{provide: TitleStrategy, useClass: PageTitleStrategy},provideHttpClient(withFetch())]
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }), // Enable efficient change detection
+    provideClientHydration(), // Ensure client-side app hydration after SSR (if applicable)
+    provideRouter(routes), // Provide router configuration
+    provideAnimationsAsync(), // Defer animations loading for better performance
+    { provide: TitleStrategy, useClass: PageTitleStrategy }, // Use custom page title strategy
+    provideHttpClient(withFetch()) // Use fetch-based HttpClient for better performance
+  ]
 };
+

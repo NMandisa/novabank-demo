@@ -1,0 +1,120 @@
+// _hero.scss
+/* Breakpoints */
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+.hero {
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-color: var(--dark-bg-subtle);
+  color: var(--text-color);
+  padding: 10vh 0;
+  overflow: hidden;
+
+  @media (max-width: $md) {
+    padding: 20vh 0;
+  }
+
+  @media (max-width: $sm) {
+    padding: 15vh 0;
+    background-position: top center;
+  }
+
+  /* Hero Overlay */
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.3)
+    );
+    z-index: 1;
+  }
+
+  /* Content Wrapper */
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    @media (max-width: $sm) {
+      padding: 0 0.5rem;
+    }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 700;
+      color: var(--light-color);
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    p {
+      font-size: 1.25rem;
+      color: var(--text-color);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      @media (max-width: $sm) {
+        font-size: 1rem;
+      }
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      border: none;
+      color: var(--light-color);
+      padding: 0.75rem 2rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      border-radius: 4px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        background-color: var(--accent-color);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(var(--accent-color), 0.5);
+      }
+
+      @media (max-width: $sm) {
+        font-size: 1rem;
+        padding: 0.5rem 1.5rem;
+      }
+    }
+  }
+
+  /* Background Animation */
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/path/to/your/image.jpg'); /* Replace with actual image path */
+    background-size: cover;
+    background-position: center center;
+    filter: brightness(0.8) blur(2px);
+    transition: filter 0.3s ease;
+    z-index: 0;
+
+    &:hover {
+      filter: brightness(1) blur(0);
+    }
+  }
+}

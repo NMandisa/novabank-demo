@@ -1,0 +1,28 @@
+// custom-bootstrap.scss
+$primary: #002266;
+$secondary: #cccccc;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+$accent: #ffcc00;
+$muted: #6c757d;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  "accent": $accent,
+  "muted": $muted
+);
+
+// Import Bootstrap after defining custom variables
+@use 'bootstrap-reset';
+

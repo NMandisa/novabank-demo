@@ -1,0 +1,50 @@
+// _testimonials.scss
+/* Breakpoints */
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+.testimonials {
+  .carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center; // Ensure vertical alignment
+
+    img {
+      border-radius: 50%;
+      margin-right: 1rem;
+      max-width: 120px; // Limit the size of the image
+      height: auto; // Maintain aspect ratio
+    }
+
+    .lead {
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.6; // Improve readability
+      color: var(--text-color); // Use theme color for consistency
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: $md) {
+    .carousel-item {
+      flex-direction: column; // Stack content vertically on smaller screens
+      text-align: center; // Center the text for smaller devices
+    }
+
+    img {
+      margin-right: 0;
+      margin-bottom: 1rem; // Space between image and text
+      max-width: 100px; // Adjust image size for smaller screens
+    }
+  }
+
+  // Optional: Style for carousel navigation controls (prev/next)
+  .carousel-control-prev, .carousel-control-next {
+    color: var(--text-color); // Match navigation icon color to text color
+  }
+
+  .carousel-control-prev:hover, .carousel-control-next:hover {
+    color: var(--primary-color); // Accent color for hover effect
+  }
+}

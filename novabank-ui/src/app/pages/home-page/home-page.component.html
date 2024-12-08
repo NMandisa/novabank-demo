@@ -1,1 +1,164 @@
-<p>home-page works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="description"
+    content="Empower your financial future with our secure and user-friendly banking system. Manage your accounts, transactions, and more with ease.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Home | Nova Bank">
+  <meta property="og:description"
+    content="Empower your financial future with our secure and user-friendly banking system.">
+  <meta property="og:image" content="banking-hero.jpg">
+  <title>Home | Nova Bank</title>
+  <!-- Favicon -->
+</head>
+
+<body>
+    <!-- Temporary Banner -->
+    <div class="temp-banner nav navbar-nav" #tempBanner>
+      <span>🎉 Special Offer! Get 10% off on all services this month. Don't miss out! </span>
+      <button (click)="dismissBanner()">Dismiss</button>
+    </div>
+    <!-- Permanent Announcement Banner -->
+    <div class="announcement-banner nav navbar-nav">
+      <span>🚨 Special Announcement! We're expanding our services globally. Stay tuned for more updates!</span>
+    </div>
+    <!-- Header Section (Navbar) -->
+    <header>
+      <nav class="navbar navbar-expand-lg shadow-sm" aria-label="Main Navigation">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="logo.png" alt="Nova Bank Logo" width="150" loading="lazy">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="#dashboard" aria-label="Dashboard">Dashboard</a></li>
+              <li class="nav-item"><a class="nav-link" href="#accounts" aria-label="Accounts">Accounts</a></li>
+              <li class="nav-item"><a class="nav-link" href="#help" aria-label="Help">Help</a></li>
+            </ul>
+            <div class="navbar-nav ms-3" hidden>
+              <!-- Theme Toggle Button -->
+              <button class="btn me-2" (click)="switchToLightTheme()">Light Theme</button>
+              <button class="btn me-2" (click)="switchToDarkTheme()">Dark Theme</button>
+              <button class="btn me-2" (click)="switchToXmasTheme()">Xmas Theme</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+  <!-- Hero Section -->
+  <section class="hero d-flex justify-content-center align-items-center">
+    <!-- <div class="hero-overlay"></div> Semi-transparent dark overlay -->
+    <div class="text-center z-index-1">
+      <h1 class="display-3 fw-bold">Empower Your Financial Future</h1>
+      <p class="lead">Manage your finances easily and securely with our advanced banking system.</p>
+      <a href="#explore" class="btn btn-primary btn-lg" aria-label="Explore More">Explore More</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="container py-5" id="features">
+    <h2 class="text-center mb-5">Features</h2>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <i class="bi bi-wallet2 fs-1 text-primary" aria-hidden="true"></i>
+        <h4 class="mt-3">Manage Your Wallet</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ipsum ac nulla hendrerit auctor.</p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-shield-lock fs-1 text-primary" aria-hidden="true"></i>
+        <h4 class="mt-3">Top-tier Security</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer pharetra elit eu nulla
+          gravida.</p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-calendar-event fs-1 text-primary" aria-hidden="true"></i>
+        <h4 class="mt-3">Plan Your Future</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget feugiat nisi. Curabitur aliquet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="container py-5" id="testimonials">
+    <div class="text-center">
+      <h2>What Our Clients Say</h2>
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" aria-live="polite"
+        aria-label="Client Testimonials Carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="d-flex justify-content-center">
+              <img src="client1.jpg" class="rounded-circle me-3" width="80" height="80" alt="Client 1" loading="lazy">
+              <p class="lead">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
+                vestibulum." - John Doe</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+              <img src="client2.jpg" class="rounded-circle me-3" width="80" height="80" alt="Client 2" loading="lazy">
+              <p class="lead">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus nisi eu dui
+                facilisis." - Jane Smith</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev"
+          aria-label="Previous testimonial">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next"
+          aria-label="Next testimonial">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call-to-Action Section -->
+  <section class="cta-section text-center py-5">
+    <h2>Ready to Take Control of Your Financial Future?</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sign up today and experience the power of our secure,
+      user-friendly banking platform.</p>
+    <a href="#signup" class="btn btn-lg" aria-label="Get Started">Get Started</a>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>Contact Us</h5>
+          <address>
+            Address: Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+            Email: <a href="mailto:support@novabank.com">supportnovabank.com</a><br>
+            Phone: <a href="tel:+18001234567">+1 (800) 123-4567</a>
+          </address>
+        </div>
+        <div class="col-md-3">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Follow Us</h5>
+          <a href="#" class="me-3" aria-label="Facebook" title="Follow us on Facebook"><i
+              class="bi bi-facebook fs-2"></i></a>
+          <a href="#" class="me-3" aria-label="Twitter" title="Follow us on Twitter"><i
+              class="bi bi-twitter fs-2"></i></a>
+          <a href="#" class="me-3" aria-label="LinkedIn" title="Follow us on LinkedIn"><i
+              class="bi bi-linkedin fs-2"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+// themes/_themes.scss
+@use './../base/palette' as *;
+
+$themes: (
+  light: (
+    // Base Colors
+    primary-color: #002266,
+    secondary-color: #cccccc,
+    accent-color: #ffcc00,
+    success-color: #198754,
+    info-color: #0dcaf0,
+    warning-color: #ffc107,
+    danger-color: #dc3545,
+    light-color: #f8f9fa,
+    dark-color: #212529,
+    text-color: #333333,
+    background-color: #f9f9f9,  // Light theme background color
+    border-color: #ddd,
+    hover-bg-color: #f1f1f1,
+    active-bg-color: #ffcc00,
+
+    // Link and Button Colors
+    link-color: #007bff,
+    link-hover-color: #0056b3,
+    button-color: #007bff,
+    button-hover-color: #0056b3,
+
+    // Emphasis Colors
+    primary-text-emphasis: #052c65,
+    secondary-text-emphasis: #2b2f32,
+    success-text-emphasis: #0a3622,
+    info-text-emphasis: #055160,
+    warning-text-emphasis: #664d03,
+    danger-text-emphasis: #58151c,
+    light-text-emphasis: #495057,
+    dark-text-emphasis: #495057,
+
+    // Subtle Background and Borders
+    primary-bg-subtle: #cfe2ff,
+    secondary-bg-subtle: #e2e3e5,
+    success-bg-subtle: #d1e7dd,
+    info-bg-subtle: #cff4fc,
+    warning-bg-subtle: #fff3cd,
+    danger-bg-subtle: #f8d7da,
+    light-bg-subtle: #fcfcfd,
+    dark-bg-subtle: #ced4da,
+
+    primary-border-subtle: #9ec5fe,
+    secondary-border-subtle: #c4c8cb,
+    success-border-subtle: #a3cfbb,
+    info-border-subtle: #9eeaf9,
+    warning-border-subtle: #ffe69c,
+    danger-border-subtle: #f1aeb5,
+    light-border-subtle: #e9ecef,
+    dark-border-subtle: #adb5bd
+  ),
+
+  dark: (
+    // Base Colors
+    primary-color: #121212,
+    secondary-color: #1f1f1f,
+    accent-color: #bb86fc,
+    success-color: #198754,
+    info-color: #0dcaf0,
+    warning-color: #ffc107,
+    danger-color: #dc3545,
+    light-color: #6c757d,
+    dark-color: #ffffff,
+    text-color: #e0e0e0,
+    background-color: #121212,  // Dark theme background color
+    border-color: #444,
+    hover-bg-color: #333,
+    active-bg-color: #bb86fc,
+
+    // Link and Button Colors
+    link-color: #66b3ff,
+    link-hover-color: #3399ff,
+    button-color: #bb86fc,
+    button-hover-color: #9b55e0,
+
+    // Emphasis Colors
+    primary-text-emphasis: #ffffff,
+    secondary-text-emphasis: #f8f9fa,
+    success-text-emphasis: #d4edda,
+    info-text-emphasis: #cff4fc,
+    warning-text-emphasis: #fff3cd,
+    danger-text-emphasis: #f8d7da,
+    light-text-emphasis: #dee2e6,
+    dark-text-emphasis: #adb5bd,
+
+    // Subtle Background and Borders
+    primary-bg-subtle: #242424,
+    secondary-bg-subtle: #1f1f1f,
+    success-bg-subtle: #d1e7dd,
+    info-bg-subtle: #cff4fc,
+    warning-bg-subtle: #fff3cd,
+    danger-bg-subtle: #f8d7da,
+    light-bg-subtle: #6c757d,
+    dark-bg-subtle: #343a40,
+
+    primary-border-subtle: #3d3d3d,
+    secondary-border-subtle: #343a40,
+    success-border-subtle: #a3cfbb,
+    info-border-subtle: #9eeaf9,
+    warning-border-subtle: #ffe69c,
+    danger-border-subtle: #f1aeb5,
+    light-border-subtle: #adb5bd,
+    dark-border-subtle: #495057
+  ),
+
+  xmas: (
+    // Base Colors
+    primary-color: #ff0000,
+    secondary-color: #008000,
+    accent-color: #ffffff,
+    success-color: #33cc33,
+    info-color: #66b3ff,
+    warning-color: #ffcc00,
+    danger-color: #e60000,
+    light-color: #f2f2f2,
+    dark-color: #004d00,
+    background-color: #ffcccc, // Xmas theme background color (Image)
+    border-color: #ddd,
+    hover-bg-color: #ffcccc,
+    active-bg-color: #008000,
+    text-color: #333333,
+
+    // Link and Button Colors
+    link-color: #ff0000,
+    link-hover-color: #b30000,
+    button-color: #ff0000,
+    button-hover-color: #b30000,
+
+    // Emphasis Colors
+    primary-text-emphasis: #8b0000,
+    secondary-text-emphasis: #006400,
+    success-text-emphasis: #145214,
+    info-text-emphasis: #004080,
+    warning-text-emphasis: #664400,
+    danger-text-emphasis: #800000,
+    light-text-emphasis: #333333,
+    dark-text-emphasis: #004d00,
+
+    // Subtle Background and Borders
+    primary-bg-subtle: #ffcccc,
+    secondary-bg-subtle: #ccffcc,
+    success-bg-subtle: #d9f2d9,
+    info-bg-subtle: #e6f7ff,
+    warning-bg-subtle: #fff2cc,
+    danger-bg-subtle: #ffe6e6,
+    light-bg-subtle: #fafafa,
+    dark-bg-subtle: #e0ffe0,
+
+    primary-border-subtle: #ff9999,
+    secondary-border-subtle: #99cc99,
+    success-border-subtle: #b3e6b3,
+    info-border-subtle: #cce6ff,
+    warning-border-subtle: #ffe066,
+    danger-border-subtle: #ff9999,
+    light-border-subtle: #eaeaea,
+    dark-border-subtle: #99cc99
+  )
+);
+
+// Loop through themes and define CSS variables for each theme
+@each $theme-name, $theme-vars in $themes {
+  [data-theme="#{$theme-name}"] {
+    @each $var-name, $var-value in $theme-vars {
+      --#{$var-name}: #{$var-value};
+    }
+  }
+}

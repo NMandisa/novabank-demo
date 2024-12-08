@@ -1,0 +1,54 @@
+// X [ERROR] Undefined variable.
+// Core Palette
+// $primary: #002266;
+// $secondary: #cccccc;
+// $success: #28a745;
+// $info: #17a2b8;
+// $warning: #ffc107;
+// $danger: #dc3545;
+// $light: #f8f9fa;
+// $dark: #343a40;
+
+// // Extended Palette
+// $accent: #ffcc00;
+// $muted: #6c757d;
+
+// // Bootstrap Theme Colors
+// $theme-colors: (
+//   "primary": $primary,
+//   "secondary": $secondary,
+//   "success": $success,
+//   "info": $info,
+//   "warning": $warning,
+//   "danger": $danger,
+//   "light": $light,
+//   "dark": $dark,
+//   "accent": $accent,
+//   "muted": $muted
+// );
+
+// _palette.scss
+$primary: #002266;
+$secondary: #cccccc;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+$accent: #ffcc00;
+$muted: #6c757d;
+
+// If necessary, include a map for consistent access
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  "accent": $accent,
+  "muted": $muted
+);

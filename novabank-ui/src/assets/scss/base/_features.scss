@@ -1,0 +1,65 @@
+// _features.scss
+/* Breakpoints */
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+.features {
+  .row {
+    margin-top: 1rem;
+
+    .col-md-4 {
+      padding: 1rem;
+      text-align: center;
+
+      @media (max-width: $md) {
+        padding: 0.75rem;
+      }
+
+      @media (max-width: $sm) {
+        padding: 0.5rem;
+      }
+
+      &:hover {
+        background-color: var(--light-background-color);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      i {
+        font-size: 3rem;
+        color: var(--text-color);
+
+        &:hover {
+          color: var(--accent-color);
+        }
+      }
+
+      h4 {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+
+        @media (max-width: $md) {
+          font-size: 1.25rem;
+        }
+
+        @media (max-width: $sm) {
+          font-size: 1.1rem;
+        }
+      }
+
+      p {
+        font-size: 1rem;
+        color: var(--accent-color);
+
+        @media (max-width: $md) {
+          font-size: 0.95rem;
+        }
+
+        @media (max-width: $sm) {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+}

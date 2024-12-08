@@ -32,12 +32,17 @@
               }
             ],
             "styles": [
-              //"src/assets/scss/themes/default.scss",
-              //"src/assets/scss/themes/dark.scss",
-			  "src/assets/css/app.min.css" // Point to the compiled CSS
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",  // Bootstrap compiled CSS
+              "src/assets/scss/app.scss",  // Point to the compiled CSS (minified by Gulp)
+              "node_modules/typeface-playfair-display/index.css", // Include Playfair Display font
+              "node_modules/typeface-montserrat/index.css", // Include Montserrat font
+              //"node_modules/bootstrap-icons/font/bootstrap-icons.css"
             ],
             "scripts": [
-				"src/assets/js/app.min.js" // Point to the concatenated and minified JS
+				      "node_modules/jquery/dist/jquery.min.js",  // Include jQuery from node_modules
+              "node_modules/popper.js/dist/umd/popper.min.js",  // Include Popper.js from node_modules
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",  // Include Bootstrap JS from node_modules
+              "src/assets/js/app.min.js"  // Include the concatenated and minified custom JavaScript
 			]
           },
           "configurations": {
@@ -45,7 +50,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
+                  "maximumWarning": "700kB",
                   "maximumError": "1MB"
                 },
                 {
