@@ -3,6 +3,7 @@ import { FooterSection } from '../../../models/cms/footer-section.model';
 import { FooterService } from '../../../services/cms/footer.service';
 import { ErrorDetails } from '../../../models/error-details.model';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ErrorHandlerService } from '../../../services/error-handler.service';
 
 @Component({
   selector: 'app-footer',
@@ -13,7 +14,7 @@ export class FooterComponent implements OnInit {
   footerSections: FooterSection[] = []; // Array to hold footer sections
   errorDetails: ErrorDetails | null = null; // Holds detailed error information
 
-  constructor(private footerService: FooterService) { }
+  constructor(private footerService: FooterService, private errorHandler: ErrorHandlerService) { }
 
   ngOnInit(): void {
     this.loadFooterSections();
@@ -26,26 +27,10 @@ export class FooterComponent implements OnInit {
         this.footerSections = sections; // Populate footer sections on success
       },
       error: (error: any) => {
-        this.handleError(error); // Delegate error handling to a dedicated method
+        //this.handleError(error); // Delegate error handling to a dedicated method
+         // Handle errors using the ErrorDetails model
+        this.errorDetails = this.errorHandler.handleError(error, 'Failed to load footer sections. Please try again later.');
       },
     });
-  }
-
-  // Handle errors using the ErrorDetails model
-  private handleError(error: HttpErrorResponse): void {
-    if (error.error instanceof ErrorEvent) {
-      // Client-side error
-      console.error('Client-side error:', error.error.message);
-    } else {
-      // Server-side error
-      console.error(`Server-side error: ${error.status} - ${error.message}`);
-    }
-
-    this.errorDetails = {
-      message: 'Failed to load footer sections. Please try again later.',
-      statusCode: error.status,
-      details: error.message,
-      timestamp: new Date(),
-    };
   }
 }

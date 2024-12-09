@@ -1,3 +1,4 @@
 rootProject.name = 'novabank'
 include 'novabank-core'
 include 'novabank-web-service'
+include 'novabank-cms-service'
