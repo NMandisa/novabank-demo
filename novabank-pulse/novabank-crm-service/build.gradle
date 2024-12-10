@@ -3,8 +3,8 @@ plugins {
     id 'jacoco'
 }
 
-description='novabank-web-services'
-group = 'za.co.novabank.web'
+description='novabank-crm-services'
+group = 'za.co.novabank-crm'
 version = '0.0.1-SNAPSHOT'
 
 dependencies {
